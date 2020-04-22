@@ -40,6 +40,11 @@ class CreateOrder implements PayUCreateOrderInterface
     {
         $this->payUConfig->setDefaultConfig($type);
         $data['merchantPosId'] = $this->payUConfig->getMerchantPosiId();
+        $redirectUri = $this->payUConfig->getPaymentRedirectUri();
+        if ($redirectUri) {
+            $data['continueUrl'] = $redirectUri;
+        }
+        
         $payUOrder = $this->openPayUOrder;
         $response = $payUOrder::create($data)->getResponse();
 
