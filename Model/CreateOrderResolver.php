@@ -142,7 +142,7 @@ class CreateOrderResolver implements CreateOrderResolverInterface
             'totalAmount' => $this->getFormatAmount($this->order->getGrandTotalAmount()),
             'currencyCode' => $this->order->getCurrencyCode(),
             'notifyUrl' => $this->getNotifyUrl($methodTypeCode, $methodCode),
-            'continueUrl' => $this->urlBuilder->getUrl($coninueUrl),
+            'continueUrl' => $this->payUConfig->getPaymentRedirectUri() ?? $this->urlBuilder->getUrl($coninueUrl),
             'settings' => ['invoiceDisabled' => 'true'],
             'buyer' => $this->getBuyer(),
             'products' => $this->getProductArray(),

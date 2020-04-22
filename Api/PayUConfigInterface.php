@@ -233,10 +233,16 @@ interface PayUConfigInterface
     public function getPaymentMethodsOrder();
 
     /**
+     * Get payment redirect uri
+     *
+     * @return string
+     */
+    public function getPaymentRedirectUri();
+
+    /**
      * Get is enable currency rates for credit card
      *
      * @return bool
      */
     public function isCrediCardCurrencyRates();
-
 }

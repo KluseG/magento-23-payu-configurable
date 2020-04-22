@@ -167,6 +167,19 @@ class Config implements PayUConfigInterface
     /**
      * {@inheritdoc}
      */
+    public function getPaymentRedirectUri()
+    {
+        $uri = str_replace(
+            ' ',
+            '',
+            $this->gatewayConfig->getValue('main_parameters/payment_redirect', $this->storeId)
+        );
+        return empty($uri) ? null : $uri;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function isRepaymentActive($code)
     {
         $this->setGatewayConfigCode($code);
