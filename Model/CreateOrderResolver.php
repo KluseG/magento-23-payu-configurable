@@ -127,14 +127,13 @@ class CreateOrderResolver implements CreateOrderResolverInterface
         $orderCurrencyCode = null,
         $coninueUrl = 'checkout/onepage/success'
     ) {
+        $this->payUConfig->setDefaultConfig($methodCode);
         $this->order = $order;
         $customerIp = $this->order->getRemoteIp();
 
         if (empty($customerIp)) {
             $customerIp = $this->remoteAddress->getRemoteAddress();
         }
-
-        $this->payUConfig->setDefaultConfig($methodTypeCode);
 
         $paymentData = [
             'txn_type' => 'A',
