@@ -4,7 +4,7 @@
 
 `Moduł jest wydawany na licencji GPL.`
 
-**TO JEST FORK. DODAJE JEDYNIE POLE CONTINUE_URL.**
+<!-- **TO JEST FORK. DODAJE JEDYNIE POLE CONTINUE_URL.** -->
 
 **Jeżeli masz jakiekolwiek pytania lub chcesz zgłosić błąd zapraszamy do kontaktu z naszym wsparciem pod adresem: tech@payu.pl.**
 
