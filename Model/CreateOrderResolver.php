@@ -134,6 +134,8 @@ class CreateOrderResolver implements CreateOrderResolverInterface
             $customerIp = $this->remoteAddress->getRemoteAddress();
         }
 
+        $this->payUConfig->setDefaultConfig($methodTypeCode);
+
         $paymentData = [
             'txn_type' => 'A',
             'description' => $this->getOrderDescription(),
