@@ -169,13 +169,17 @@ class CreateOrderResolver implements CreateOrderResolverInterface
      */
     private function getOrderDescription()
     {
-        $storeId = $this->order->getStoreId();
-        if (in_array($storeId, [2, 6])) {
-            // Dr Irena Eris
-            return __('Order %1 from store %2', $this->order->getOrderIncrementId(), 'https://sklep.drirenaeris.com/');
-        } else {
-            // Pharmaceris
-            return __('Order %1 from store %2', $this->order->getOrderIncrementId(), 'https://sklep.pharmaceris.com/');
+        try {
+            $storeId = $this->order->getStoreId();
+            if (in_array($storeId, [2, 6])) {
+                // Dr Irena Eris
+                return __('Order %1 from store %2', $this->order->getOrderIncrementId(), 'https://sklep.drirenaeris.com/');
+            } else {
+                // Pharmaceris
+                return __('Order %1 from store %2', $this->order->getOrderIncrementId(), 'https://sklep.pharmaceris.com/');
+            }
+        } catch (\Exception $e) {
+            return __('Order %1 from store %2', $this->order->getOrderIncrementId(), 'COSMETICS LAB SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ');
         }
     }
 
