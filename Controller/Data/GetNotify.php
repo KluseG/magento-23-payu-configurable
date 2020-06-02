@@ -170,5 +170,4 @@ class GetNotify extends Action implements CsrfAwareActionInterface
     {
         return true;
     }
-
 }
