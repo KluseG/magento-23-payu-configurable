@@ -72,6 +72,8 @@ class GetPostPlaceOrderData extends Action
       /** @var $payment \Magento\Sales\Model\Order\Payment */
       $payment = $this->checkoutSession->getLastRealOrder()->getPayment();
       $paymentInformation = $payment->getAdditionalInformation();
+
+      $this->payUConfig->setDefaultConfig($payment->getMethod());
       if (
         is_array($paymentInformation) &&
         array_key_exists(PayUConfigInterface::PAYU_REDIRECT_URI_CODE, $paymentInformation)
