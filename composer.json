@@ -1,5 +1,5 @@
 {
-    "name": "kluseg/magento-24-payu-configurable",
+    "name": "kluseg/magento-23-payu-configurable",
     "description": "Official PayU integration plugin for Magento 2.4",
     "keywords": [
         "payu",
